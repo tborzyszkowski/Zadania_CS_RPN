@@ -72,6 +72,4 @@ Projekt rozwiązania musi spełniać dobre praktyki programowania obiektowego, z
 
 **Kryterium sukcesu:** Kod jest uznany za ukończony, gdy architektura spełnia powyższe zasady SOLID, a wszystkie testy jednostkowe napisane w **Zadaniu 1 (Faza RED)** przechodzą pomyślnie (status **GREEN**).
 
-## UWAGA
-
-[Zasady SOLID](https://www.samouczekprogramisty.pl/solid-czyli-dobre-praktyki-w-programowaniu-obiektowym/).
+> **Uwaga:** [Zasady SOLID](https://www.samouczekprogramisty.pl/solid-czyli-dobre-praktyki-w-programowaniu-obiektowym/).
