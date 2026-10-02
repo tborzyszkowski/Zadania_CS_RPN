@@ -24,21 +24,21 @@ Opierając się na dostarczonej definicji stosu, przygotuj w pliku `RPNTest` zes
 
 
 2. **Operacje dwuargumentowe:**
-* Dodawanie (`+`), odejmowanie (`-`), mnożenie (`*`).
-* Dzielenie (`/`) – wymaga osobnego przetestowania poprawnego dzielenia oraz zgłaszania błędu przy próbie dzielenia przez zero.
+    - Dodawanie (`+`), odejmowanie (`-`), mnożenie (`*`).
+    - Dzielenie (`/`) – wymaga osobnego przetestowania poprawnego dzielenia oraz zgłaszania błędu przy próbie dzielenia przez zero.
 
 
 3. **Operacje jednoargumentowe:**
-* Wartość bezwzględna (np. `ABS`) oraz silnia (np. `!`).
-* *Przykład:* `B101 !` = 120.
+    - Wartość bezwzględna (np. `ABS`) oraz silnia (np. `!`).
+    - *Przykład:* `B101 !` = 120.
 
 
 4. **Obsługa błędów i niepoprawnych składniowo wyrażeń (Sytuacje wyjątkowe):**
-* **Za dużo argumentów / niedokończone wyrażenie:** np. `1 2` (po zakończeniu obliczeń na stosie zostaje więcej niż jeden element).
-* **Za mało argumentów dla operatora:** np. `1 +` lub `ABS` na pustym stosie.
-* **Dzielenie przez zero:** np. `5 0 /`.
-* **Błędny format liczby w danym systemie:** np. `B102` (cyfra `2` w systemie binarnym) lub `#XY`.
-* **Nierozpoznany symbol / operator.**
+    - **Za dużo argumentów / niedokończone wyrażenie:** np. `1 2` (po zakończeniu obliczeń na stosie zostaje więcej niż jeden element).
+    - **Za mało argumentów dla operatora:** np. `1 +` lub `ABS` na pustym stosie.
+    - **Dzielenie przez zero:** np. `5 0 /`.
+    - **Błędny format liczby w danym systemie:** np. `B102` (cyfra `2` w systemie binarnym) lub `#XY`.
+    - **Nierozpoznany symbol / operator.**
 
 
 
@@ -55,19 +55,17 @@ Zaimplementuj metodę `evalRPN` w klasie `RPN` tak, aby realizowała całą logi
 Projekt rozwiązania musi spełniać dobre praktyki programowania obiektowego, ze szczególnym uwzględnieniem zasad **SOLID**:
 
 1. **Zasada Jednej Odpowiedzialności (Single Responsibility Principle – SRP):**
-* Podziel kod na mniejsze, spójne klasy/komponenty wydelegowane do konkretnych zadań, np.:
-* Parsowanie tokenów i rozpoznawanie systemów liczbowych.
-* Walidacja poprawności składniowej wyrażenia.
-* Wykonywanie samych operacji matematycznych.
+    - Podziel kod na mniejsze, spójne klasy/komponenty wydelegowane do konkretnych zadań, np.:
+        - Parsowanie tokenów i rozpoznawanie systemów liczbowych.
+        - Walidacja poprawności składniowej wyrażenia.
+        - Wykonywanie samych operacji matematycznych.
 
-
-* Klasa `RPN` / metoda `evalRPN` powinna pełnić rolę orkiestratora procesu, a nie zawierać całą logikę w jednej wielkiej metodzie (`God Method`).
+    - Klasa `RPN` / metoda `evalRPN` powinna pełnić rolę orkiestratora procesu, a nie zawierać całą logikę w jednej wielkiej metodzie (`God Method`).
 
 
 2. **Zasada Otwarte-Zamknięte (Open/Closed Principle – OCP):**
-* Architektura powinna być **otwarta na rozbudowę, ale zamknięta na modyfikacje**.
-* Dodanie nowego operatora (np. potęgowania `^`, modulu `%`) lub nowego systemu liczbowego (np. ósemkowego `O`) powinno odbywać się poprzez **dopisanie nowej klasy/klucza w rejestrze**, a **nie poprzez edycję instrukcji `switch` / `if-else**` w głównej pętli ewaluatora RPN (zastosuj np. wzorzec *Strategia*, *Słownik operatorów* lub polimorfizm).
-
+    - Architektura powinna być **otwarta na rozbudowę, ale zamknięta na modyfikacje**.
+    - Dodanie nowego operatora (np. potęgowania `^`, modulu `%`) lub nowego systemu liczbowego (np. ósemkowego `O`) powinno odbywać się poprzez **dopisanie nowej klasy/klucza w rejestrze**, a **nie poprzez edycję instrukcji `switch` / `if-else**` w głównej pętli ewaluatora RPN (zastosuj np. wzorzec *Strategia*, *Słownik operatorów* lub polimorfizm).
 
 
 **Kryterium sukcesu:** Kod jest uznany za ukończony, gdy architektura spełnia powyższe zasady SOLID, a wszystkie testy jednostkowe napisane w **Zadaniu 1 (Faza RED)** przechodzą pomyślnie (status **GREEN**).
