@@ -17,10 +17,10 @@ Opierając się na dostarczonej definicji stosu, przygotuj w pliku `RPNTest` zes
 ### Wymagania funkcjonalne do przetestowania:
 
 1. **Systemy liczbowe (Przedrostki liczb):**
-  * **Dziesiętny (`D` lub brak przedrostka):** np. `D10` = 10, `12` = 12.
-  * **Dwójkowy (`B`):** np. `B101` = 5.
-  * **Szesnastkowy (`#`):** np. `#AB` = 171.
-  * **Złożone wyrażenia mieszane:** np. `#BA D13 +` = 199.
+* **Dziesiętny (`D` lub brak przedrostka):** np. `D10` = 10, `12` = 12.
+* * **Dwójkowy (`B`):** np. `B101` = 5.
+* **Szesnastkowy (`#`):** np. `#AB` = 171.
+* **Złożone wyrażenia mieszane:** np. `#BA D13 +` = 199.
 
 
 2. **Operacje dwuargumentowe:**
